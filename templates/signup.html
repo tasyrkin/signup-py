@@ -1,0 +1,20 @@
+<!DOCTYPE>
+
+<html>
+<head>
+	<title>Signup for webdev</title>
+	<style type="text/css">
+		.label {text-align: right}
+		.error {color: red}
+	</style>
+</head>
+<body>
+	<form method="post">
+		<label>Username: <input type="text" name="username" value="{{username}}"></label><label class="error">{{error_username}}</label><br>
+		<label>Password:<input type="password" name="password"></label><label class="error">{{error_password}}</label><br>
+		<label>Verify password:<input type="password" name="verify"></label><br>
+		<label>Email: <input type="text" name="email" value="{{email}}"></label><label class="error">{{error_email}}</label><br>
+		<input type="submit" value="Login"/>
+	</form>
+</body>
+</html>
