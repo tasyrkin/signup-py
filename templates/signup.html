@@ -4,16 +4,34 @@
 <head>
 	<title>Signup for webdev</title>
 	<style type="text/css">
-		.label {text-align: right}
+		.label {text-align: left}
 		.error {color: red}
 	</style>
 </head>
 <body>
 	<form method="post">
-		<label>Username: <input type="text" name="username" value="{{username}}"></label><label class="error">{{error_username}}</label><br>
-		<label>Password:<input type="password" name="password"></label><label class="error">{{error_password}}</label><br>
-		<label>Verify password:<input type="password" name="verify"></label><br>
-		<label>Email: <input type="text" name="email" value="{{email}}"></label><label class="error">{{error_email}}</label><br>
+		<table>
+			<tr>
+				<td>Username:<td>
+				<td><input type="text" name="username" value="{{username}}"></label><td>
+				<td><label class="error">{{error_username}}</label><td>
+			</tr>
+			<tr>
+				<td>Password:<td>
+				<td><input type="password" name="password"></label><td>
+				<td><label class="error">{{error_password}}</label><td>
+			</tr>
+			<tr>
+				<td>Verify password:<td>
+				<td><input type="password" name="verify"></label><td>
+				<td><label class="error">{{error_verify}}</label></td>
+			</tr>
+			<tr>
+				<td>Email:<td>
+				<td><input type="text" name="email" value="{{email}}"></label></td>
+				<td><label class="error">{{error_email}}</label></td>
+			</tr>
+		</table>
 		<input type="submit" value="Login"/>
 	</form>
 </body>

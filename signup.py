@@ -17,7 +17,7 @@ def render_str(template, **params):
 	return t.render(params)
 
 def verify_password(p_password, p_verify):
-	return p_password == p_verify and PASSWORD_RE.match(p_password)
+	return p_password == p_verify, PASSWORD_RE.match(p_password)
 
 def verify_username(p_username):
 	return USER_RE.match(p_username)
@@ -42,12 +42,12 @@ class Signup(BaseHandler):
 
 		p_password = self.request.get("password")
 		p_verify = self.request.get("verify")
-		is_password_valid = verify_password(p_password, p_verify)
+		is_password_match, is_password_valid = verify_password(p_password, p_verify)
 
 		p_email = self.request.get("email")
 		is_email_valid = verify_email(p_email)
 
-		if is_username_valid and is_password_valid and is_email_valid:
+		if is_username_valid and is_password_match and is_password_valid and is_email_valid:
 			self.redirect('/welcome?username=' + p_username)
 		else:
 			self.render('signup.html',
@@ -55,6 +55,7 @@ class Signup(BaseHandler):
 									email = p_email,
 									error_username = "" if is_username_valid else "Username is invalid",
 									error_password = "" if is_password_valid else "Password is invalid",
+									error_verify= "" if is_password_match else "Passwords don't match",
 									error_email = "" if is_email_valid else "Email is invalid")
 
 class WelcomeHandler(BaseHandler):
