@@ -12,24 +12,24 @@
 	<form method="post">
 		<table>
 			<tr>
-				<td>Username:<td>
-				<td><input type="text" name="username" value="{{username}}"></label><td>
-				<td><label class="error">{{error_username}}</label><td>
+				<td>Username:</td>
+				<td><input type="text" name="username" value="{{username}}"></label></td>
+				<td><div class="error">{{error_username}}</div></td>
 			</tr>
 			<tr>
-				<td>Password:<td>
-				<td><input type="password" name="password"></label><td>
-				<td><label class="error">{{error_password}}</label><td>
+				<td>Password:</td>
+				<td><input type="password" name="password"></label></td>
+				<td><div class="error">{{error_password}}</div></td>
 			</tr>
 			<tr>
-				<td>Verify password:<td>
-				<td><input type="password" name="verify"></label><td>
-				<td><label class="error">{{error_verify}}</label></td>
+				<td>Verify password:</td>
+				<td><input type="password" name="verify"></label></td>
+				<td><div class="error">{{error_verify}}</div></td>
 			</tr>
 			<tr>
-				<td>Email:<td>
+				<td>Email:</td>
 				<td><input type="text" name="email" value="{{email}}"></label></td>
-				<td><label class="error">{{error_email}}</label></td>
+				<td><div class="error">{{error_email}}</div></td>
 			</tr>
 		</table>
 		<input type="submit" value="Login"/>
